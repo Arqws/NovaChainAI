@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>NovaChain AI</title>
+</head>
+<body>
+  <h1>NovaChain AI — MVP UI</h1>
+  
+  <h3>Upload Document</h3>
+  <input type="file" id="fileInput">
+  <button onclick="upload()">Upload</button>
+  
+  <h3>Search</h3>
+  <input type="text" id="query">
+  <button onclick="search()">Search</button>
+  <pre id="results"></pre>
+
+<script>
+  async function upload() {
+    const file = document.getElementById('fileInput').files[0];
+    const form = new FormData();
+    form.append("file", file);
+    const res = await fetch("/api/documents", { method: "POST", body: form });
+    document.getElementById('results').innerText = await res.text();
+  }
+
+  async function search() {
+    const query = document.getElementById('query').value;
+    const res = await fetch("/api/search", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ query })
+    });
+    document.getElementById('results').innerText = await res.text();
+  }
+</script>
+</body>
+</html>
