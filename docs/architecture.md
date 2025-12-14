@@ -4,13 +4,20 @@ NovaChain AI is a **modular local-first document intelligence system** focused o
 
 ---
 
-## 📌 Architecture Overview
+## 📌 # Architecture Overview
 
-[Frontend UI] <--> [Backend API/.NET] <--> [AI Engine - C++/LLM]
-                       |
-                 [Vector Database]
-                       |
-                  [File Storage]
+NovaChain AI is built as a local-first, modular system.
+
+## High-level flow
+
+User → Frontend → ASP.NET API → RAG → Local LLM → Answer
+
+## Core components
+
+- DocumentService — extraction & chunking
+- EmbeddingService — local embeddings
+- RagService — semantic search + prompt
+- LocalInference — LLM interaction
 
 ---
 
