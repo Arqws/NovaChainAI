@@ -17,6 +17,16 @@ NovaChain AI is an on-premise AI platform that allows companies to interact with
 
 ---
 
+## 🖥 Demo
+
+### Chat Interface
+![Chat](docs/screenshots/chat.png)
+! [ChatUse](docs/screenshots/chatUse.png)
+! [Server](docs/screenshots/server.png)
+
+
+---
+
 ## 🧩 Tech Stack
 
 - Backend: **ASP.NET Core (C#)**
